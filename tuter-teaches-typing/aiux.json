@@ -1,0 +1,11 @@
+{
+  "name": "Abel Tuter Teaches Typing",
+  "basename": "tuter-teaches-typing",
+  "landing": "/home",
+  "development": {
+    "token": ""
+  },
+  "build": {
+    "exclude": ["**/*.test.js", "**/test/**"]
+  }
+}

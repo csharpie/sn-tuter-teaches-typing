@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Abel Tuter, the typing coach. Original illustration. -->
+  <circle cx="60" cy="60" r="58" fill="#A4C639"/>
+  <path d="M16 108c7-20 24-30 44-30s37 10 44 30a58 58 0 0 1-88 0z" fill="#3E5C1E"/>
+  <path d="M47 80l13 13 13-13z" fill="#F7F3E3"/>
+  <path d="M51 90l9 4 9-4v9l-9-4-9 4z" fill="#B5462E"/>
+  <rect x="52" y="68" width="16" height="14" rx="6" fill="#E3AE83"/>
+  <ellipse cx="36" cy="52" rx="4.5" ry="6.5" fill="#E3AE83"/>
+  <ellipse cx="84" cy="52" rx="4.5" ry="6.5" fill="#E3AE83"/>
+  <ellipse cx="60" cy="50" rx="24" ry="26" fill="#F2C9A0"/>
+  <path d="M35 47c0-17 11-26 25-26s25 9 25 24c-6-7-15-10-25-10s-19 4-25 12z" fill="#5B3A22"/>
+  <rect x="79" y="22" width="5" height="22" rx="1" transform="rotate(28 81 33)" fill="#F2B632"/>
+  <path d="M79 21l5 0 -2.5 -5z" transform="rotate(28 81 33)" fill="#2B2B2B"/>
+  <circle cx="50" cy="52" r="7.5" fill="#FFFFFF" fill-opacity="0.35" stroke="#2B2B2B" stroke-width="2"/>
+  <circle cx="70" cy="52" r="7.5" fill="#FFFFFF" fill-opacity="0.35" stroke="#2B2B2B" stroke-width="2"/>
+  <path d="M57.5 52h5" stroke="#2B2B2B" stroke-width="2"/>
+  <circle cx="50" cy="52.5" r="2.2" fill="#2B2B2B"/>
+  <circle cx="70" cy="52.5" r="2.2" fill="#2B2B2B"/>
+  <path d="M43 41q7-5 13 0M64 41q6-5 13 0" stroke="#5B3A22" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <path d="M49 64q11 10 22 0" stroke="#7A3E2B" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+</svg>

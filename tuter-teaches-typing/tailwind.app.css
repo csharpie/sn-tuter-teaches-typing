@@ -1,0 +1,125 @@
+/**
+ * Application Tailwind extensions.
+ *
+ * Merged into the app's Tailwind delta sheet at build time.
+ * Supported directives:
+ *
+ *   @source inline("...")     — additional class safelists
+ *   @layer utilities { ... }  — new and overriding utility classes
+ *
+ * Do NOT add @import "tailwindcss" here — the build entry already includes it.
+ * Do NOT add @theme { ... } here — it is stripped by the build process.
+ * 
+ * Note:
+ * Theme-level token overrides are also possible via theme.token_overrides
+ * Override precedence is theme < app: this app-level sheet is adopted above
+ * the base platform sheet, so any app-level override here wins over the same token 
+ * set at the theme level. Set app-level token overrides deliberately; they cannot be
+ * overridden by the theme.
+ */
+
+/* Example: declare a custom app layer above utilities so app overrides
+always win the cascade, even though the app delta sheet is adopted before
+the base platform sheet.
+
+@layer utilities, my-app;
+
+@layer my-app {
+  :host {
+    --my-app-button-bg: #007bff;
+    --my-font: 'MyFont';
+    --font-sans: var(--my-font);
+  }
+
+  .aiux-btn {
+    background-color: var(--my-app-button-bg);
+  }
+}
+*/
+
+/*
+ * Left navigation styled after the Blazor Web App template's sidebar
+ * (MainLayout.razor.css / NavMenu.razor.css): a navy-to-plum gradient, a
+ * darker band behind the logo, light grey links with a translucent white
+ * hover and active fill, and 3rem rows with 4px corners.
+ *
+ * This sheet is adopted into every component's shadow root, ahead of the
+ * component's own styles. Each rule is scoped with :host(<tag>) so it only
+ * matches inside the nav, which also gives it the specificity to win; the
+ * rules stay unlayered because the components' styles are unlayered too.
+ * The colour tokens are set on the sidebar's <nav> only, so the modals and
+ * collapsed-rail flyout rendered beside it keep their light surfaces.
+ *
+ * Contrast: #d7d7d7 on the gradient is at least 9.8:1; white on the active
+ * fill is 4.5:1 at the navy end and higher toward plum.
+ */
+:host(aiux-nav-layout) .sidebar-wrapper {
+  background-image: linear-gradient(180deg, rgb(5 39 103) 0%, #3a0647 70%);
+}
+
+:host(aiux-nav-sidebar) .sidebar-nav {
+  --nav-sidebar-text: #d7d7d7;
+  --nav-sidebar-text-muted: rgb(255 255 255 / 0.7);
+  --nav-item-hover-bg: rgb(255 255 255 / 0.1);
+  --nav-item-active-bg: rgb(255 255 255 / 0.37);
+  --nav-popover-bg: rgb(5 39 103);
+  --nav-popover-border: rgb(255 255 255 / 0.2);
+  --nav-divider-color: rgb(255 255 255 / 0.2);
+  --nav-logo-wordmark-color: #fff;
+  /* The Tailwind colour tokens were resolved on the host from the defaults,
+     so re-point them at the values above. */
+  --color-nav-sidebar-text: var(--nav-sidebar-text);
+  --color-nav-sidebar-text-muted: var(--nav-sidebar-text-muted);
+  --color-nav-item-hover: var(--nav-item-hover-bg);
+  --color-nav-item-active: var(--nav-item-active-bg);
+  --color-nav-popover: var(--nav-popover-bg);
+  --color-nav-popover-border: var(--nav-popover-border);
+  --color-nav-divider: var(--nav-divider-color);
+  --color-nav-logo-wordmark: var(--nav-logo-wordmark-color);
+  /* The default black ring would vanish on the gradient. */
+  --color-focus-ring: #fff;
+  --density-item-height: 3rem;
+  color: var(--nav-sidebar-text);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+:host(aiux-nav-sidebar) .sidebar-logo {
+  height: 3.5rem;
+  background-color: rgb(0 0 0 / 0.4);
+}
+
+:host(aiux-nav-sidebar) .menu-item {
+  border-radius: 4px;
+}
+
+:host(aiux-nav-sidebar) .menu-item:hover,
+:host(aiux-nav-sidebar) .menu-item-active {
+  --color-nav-sidebar-text: #fff;
+  color: #fff;
+}
+
+/* Expanded only: the collapsed rail is too narrow for the extra padding. */
+:host(aiux-nav-sidebar:not([collapsed])) .primary-nav {
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+:host(aiux-nav-sidebar:not([collapsed])) .menu-item {
+  padding-inline: 1rem;
+}
+
+:host(aiux-nav-sidebar) .nav-children {
+  gap: 0.5rem;
+  padding-block-start: 0.5rem;
+  padding-inline-start: 1rem;
+}
+
+/* Forced colours drop the translucent fill, so outline the current page. */
+@media (forced-colors: active) {
+  :host(aiux-nav-sidebar) .menu-item-active {
+    outline: 2px solid SelectedItem;
+    outline-offset: -2px;
+  }
+}

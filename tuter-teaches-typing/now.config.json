@@ -1,0 +1,15 @@
+{
+  "scope": "x_snc_ttt",
+  "scopeId": "8e162a455d7e4220bb0d392d29043e4f",
+  "name": "Abel Tuter Teaches Typing",
+  "metadataDir": "src/plugin-xmls",
+  "appOutputDir": "dist-metadata/app",
+  "packageSourceCodeOnInstance": true,
+  "staticContent": {
+    "assets": {
+      "./public/**": {
+        "publicPath": "[$config.aiux.basename]/public"
+      }
+    }
+  }
+}
