@@ -4,7 +4,7 @@ A typing tutor that runs on ServiceNow. Players work through structured lessons,
 
 The speed test can be played as a driving game, after the one in *Mavis Beacon Teaches Typing*: the car's speed follows your typing, it overtakes traffic and steers round road works, and every mistyped key splats a bug on the windscreen.
 
-![The Speed test driving game: a highway seen from the driver's seat, with a school bus and road works ahead, bug splats on the windscreen, a rear-view mirror, and a dashboard showing the passage being typed, the time left, 57 WPM and 98% accuracy](docs/images/speed-test.png)
+![The Speed test driving game: a highway seen from the driver's seat, with road works and traffic cones ahead, bug splats on the windscreen, a car in the rear-view mirror, and a dashboard showing the passage being typed, the time left, 58 WPM and 98% accuracy](docs/images/speed-test.png)
 
 It is a scoped ServiceNow application (`x_snc_ttt`), built with AIUX (Lit web components rendered on the server) and the Now SDK, with its tables, security and tests defined in code as Fluent metadata.
 
